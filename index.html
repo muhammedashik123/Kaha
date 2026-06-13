@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaha Designs — Slow fashion atelier, Calicut</title>
+<meta name="description" content="Kaha Designs is a premium women's fashion atelier in Chalappuram, Calicut. Hand-embroidered ethnic wear, aari craft, bridal couture and custom stitching.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#080910;
+  --ink-2:#0f111c;
+  --indigo:#161c33;
+  --mocha:#241a14;
+  --gold:#c6a664;
+  --gold-soft:#e6d4a8;
+  --cream:#f2ecdf;
+  --muted:#968f83;
+  --line:rgba(255,255,255,.10);
+  --glass:rgba(255,255,255,.055);
+  --glass-2:rgba(255,255,255,.09);
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Manrope",system-ui,sans-serif;
+  --maxw:1240px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--cream);
+  font-family:var(--sans);
+  font-weight:300;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--gold);color:#1a140a}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* ambient drifting fluid background */
+.aura{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aura span{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;mix-blend-mode:screen}
+.aura .a1{width:55vw;height:55vw;left:-15vw;top:-10vw;background:radial-gradient(circle,#2c3566,transparent 70%);animation:drift1 26s ease-in-out infinite}
+.aura .a2{width:48vw;height:48vw;right:-12vw;top:30vh;background:radial-gradient(circle,#5a3320,transparent 70%);animation:drift2 32s ease-in-out infinite}
+.aura .a3{width:42vw;height:42vw;left:25vw;bottom:-15vw;background:radial-gradient(circle,#3a2e1a,transparent 70%);animation:drift3 30s ease-in-out infinite}
+@keyframes drift1{50%{transform:translate(8vw,6vh) scale(1.15)}}
+@keyframes drift2{50%{transform:translate(-7vw,-5vh) scale(1.1)}}
+@keyframes drift3{50%{transform:translate(5vw,-8vh) scale(1.2)}}
+@media(prefers-reduced-motion:reduce){.aura span{animation:none}}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:2}
+
+/* ============ LIQUID GLASS NAV (dynamic island) ============ */
+.nav{position:fixed;top:18px;left:0;right:0;z-index:60;display:flex;justify-content:center;pointer-events:none}
+.nav-pill{
+  pointer-events:auto;
+  display:flex;align-items:center;gap:26px;
+  padding:11px 14px 11px 24px;
+  border-radius:40px;
+  background:var(--glass);
+  border:1px solid var(--line);
+  backdrop-filter:blur(22px) saturate(160%);
+  -webkit-backdrop-filter:blur(22px) saturate(160%);
+  box-shadow:0 8px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.22),inset 0 -1px 0 rgba(0,0,0,.25);
+  transition:transform .5s cubic-bezier(.22,1,.36,1),padding .5s;
+  position:relative;overflow:hidden;
+}
+.nav-pill::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(120px 60px at var(--mx,30%) var(--my,0%),rgba(255,255,255,.28),transparent 60%);opacity:.7;pointer-events:none}
+.brand{font-family:var(--serif);font-size:23px;font-weight:500;letter-spacing:.04em;line-height:1;color:var(--cream)}
+.brand b{color:var(--gold);font-weight:500}
+.nav-links{display:flex;gap:6px}
+.nav-links a{font-size:12.5px;letter-spacing:.06em;color:var(--muted);padding:8px 13px;border-radius:30px;transition:.3s}
+.nav-links a:hover{color:var(--cream);background:var(--glass-2)}
+.nav-cta{font-size:12.5px;letter-spacing:.05em;color:#1a140a;background:linear-gradient(135deg,var(--gold-soft),var(--gold));padding:9px 18px;border-radius:30px;font-weight:600;transition:.3s}
+.nav-cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.nav-burger{display:none;background:none;border:0;color:var(--cream);font-size:20px;padding:6px 12px;cursor:pointer}
+
+/* ============ HERO ============ */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 22%;transform:scale(1.05);animation:kenburns 18s ease-out forwards}
+@keyframes kenburns{to{transform:scale(1)}}
+.hero-bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(to top,var(--ink) 2%,rgba(8,9,16,.2) 45%,rgba(8,9,16,.55) 100%),
+  linear-gradient(to right,rgba(8,9,16,.5),transparent 55%)}
+.hero-inner{position:relative;z-index:3;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 28px 9vh}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:22px}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--gold)}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(3.6rem,11vw,9.5rem);line-height:.9;letter-spacing:-.01em;color:var(--cream)}
+.hero h1 em{font-style:italic;color:var(--gold-soft)}
+.hero-sub{max-width:480px;margin:26px 0 34px;font-size:clamp(.98rem,1.4vw,1.15rem);color:#cdc7ba;font-weight:300}
+.hero-meta{display:flex;flex-wrap:wrap;gap:12px}
+.chip{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.05em;color:#d6d0c3;padding:10px 16px;border-radius:30px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.chip i{width:5px;height:5px;border-radius:50%;background:var(--gold);font-style:normal}
+.scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:4;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px}
+.scrollcue span{width:1px;height:42px;background:linear-gradient(var(--gold),transparent);animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+/* ============ SECTION SHELL ============ */
+section{position:relative;z-index:2}
+.pad{padding:clamp(80px,12vh,150px) 0}
+.sec-head{max-width:720px;margin-bottom:54px}
+.label{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:block}
+.sec-head h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.1rem,5vw,3.6rem);line-height:1.04;letter-spacing:-.01em}
+.sec-head h2 em{font-style:italic;color:var(--gold-soft)}
+.sec-head p{margin-top:20px;color:var(--muted);font-size:1.04rem;max-width:560px}
+
+/* glass card base + liquid sheen */
+.glass{
+  background:var(--glass);
+  border:1px solid var(--line);
+  backdrop-filter:blur(20px) saturate(150%);
+  -webkit-backdrop-filter:blur(20px) saturate(150%);
+  box-shadow:0 18px 50px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.16);
+  position:relative;overflow:hidden;
+}
+.glass.sheen::before{content:"";position:absolute;inset:0;border-radius:inherit;opacity:0;transition:opacity .4s;
+  background:radial-gradient(260px 200px at var(--mx,50%) var(--my,50%),rgba(255,255,255,.16),transparent 60%);pointer-events:none}
+.glass.sheen:hover::before{opacity:1}
+
+/* ============ ETHOS ============ */
+.ethos{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.ethos-copy h2{font-family:var(--serif);font-weight:300;font-size:clamp(1.9rem,4vw,3rem);line-height:1.12}
+.ethos-copy h2 em{font-style:italic;color:var(--gold-soft)}
+.ethos-copy p{color:var(--muted);margin-top:22px;font-size:1.05rem}
+.ethos-stats{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap}
+.stat{flex:1;min-width:120px;border-radius:18px;padding:22px}
+.stat .n{font-family:var(--serif);font-size:2.3rem;color:var(--gold-soft);line-height:1}
+.stat .t{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.ethos-img{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:3/4}
+.ethos-img img{width:100%;height:100%;object-fit:cover}
+.ethos-img figcaption{position:absolute;left:16px;bottom:16px;right:16px;border-radius:16px;padding:14px 18px;font-size:12.5px;letter-spacing:.04em;color:#e8e2d5}
+
+/* ============ LOOKBOOK ============ */
+.gallery{columns:3;column-gap:18px}
+@media(max-width:900px){.gallery{columns:2}}
+@media(max-width:560px){.gallery{columns:1}}
+.tile{position:relative;break-inside:avoid;margin-bottom:18px;border-radius:18px;overflow:hidden;cursor:pointer}
+.tile img{width:100%;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.tile:hover img{transform:scale(1.06)}
+.tile-veil{position:absolute;inset:0;display:flex;align-items:flex-end;padding:18px;opacity:0;transition:.45s;
+  background:linear-gradient(to top,rgba(8,9,16,.85),transparent 60%)}
+.tile:hover .tile-veil{opacity:1}
+.tile-veil .nm{font-family:var(--serif);font-size:1.35rem;color:var(--cream);transform:translateY(8px);transition:.5s}
+.tile-veil .tg{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);display:block;margin-top:4px;transform:translateY(8px);transition:.5s .05s}
+.tile:hover .nm,.tile:hover .tg{transform:translateY(0)}
+
+/* ============ CRAFT ============ */
+.craft{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.craft-img{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5}
+.craft-img img{width:100%;height:100%;object-fit:cover}
+.craft-list{margin-top:14px}
+.craft-row{display:flex;gap:20px;padding:24px 0;border-top:1px solid var(--line)}
+.craft-row:last-child{border-bottom:1px solid var(--line)}
+.craft-row .ix{font-family:var(--serif);font-size:1.1rem;color:var(--gold);min-width:36px;font-style:italic}
+.craft-row h4{font-size:1.08rem;font-weight:600;letter-spacing:.01em;color:var(--cream)}
+.craft-row p{color:var(--muted);font-size:.96rem;margin-top:5px}
+
+/* ============ EDIT (alankar) ============ */
+.edit{border-radius:30px;overflow:hidden;position:relative;padding:0}
+.edit-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.edit-grid img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+.edit-cap{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px;
+  background:linear-gradient(to right,rgba(8,9,16,.78),rgba(8,9,16,.32) 50%,rgba(8,9,16,.78))}
+.edit-cap .label{margin-bottom:16px}
+.edit-cap h3{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,5vw,3.4rem);line-height:1}
+.edit-cap h3 em{font-style:italic;color:var(--gold-soft)}
+.edit-cap p{color:#d2ccbf;max-width:440px;margin:18px 0 28px;font-size:1rem}
+.btn{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.04em;font-weight:600;color:#1a140a;background:linear-gradient(135deg,var(--gold-soft),var(--gold));padding:13px 26px;border-radius:30px;transition:.3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(198,166,100,.35)}
+.btn.ghost{background:var(--glass);color:var(--cream);border:1px solid var(--line);backdrop-filter:blur(14px)}
+
+/* ============ REVIEWS ============ */
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{border-radius:22px;padding:30px 28px}
+.stars{color:var(--gold);letter-spacing:3px;font-size:13px;margin-bottom:16px}
+.rev p{font-size:1rem;color:#ded8cb;font-weight:300;line-height:1.7}
+.rev .who{display:flex;align-items:center;gap:13px;margin-top:22px}
+.rev .av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.1rem;color:#1a140a;background:linear-gradient(135deg,var(--gold-soft),var(--gold));flex:none}
+.rev .who b{font-size:.92rem;font-weight:600;display:block}
+.rev .who span{font-size:11.5px;color:var(--muted)}
+
+/* ============ VISIT ============ */
+.visit{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+.visit-card{border-radius:26px;padding:46px}
+.visit-card h2{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,4vw,3rem);line-height:1.05}
+.visit-card h2 em{font-style:italic;color:var(--gold-soft)}
+.info{margin-top:34px;display:grid;gap:22px}
+.info-row{display:flex;gap:16px}
+.info-row .k{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);min-width:96px;padding-top:3px}
+.info-row .v{font-size:1.02rem;color:#e2dccf}
+.info-row .v small{display:block;color:var(--muted);font-size:.85rem;margin-top:3px}
+.visit-aside{display:flex;flex-direction:column;gap:24px}
+.visit-aside .glass{flex:1;border-radius:26px;padding:32px;display:flex;flex-direction:column;justify-content:space-between}
+.visit-aside .glass img{border-radius:16px;width:100%;height:100%;object-fit:cover}
+.aside-img{padding:0!important;overflow:hidden;min-height:200px}
+.ig{display:inline-flex;align-items:center;gap:10px;margin-top:18px;font-size:13px;color:var(--gold-soft);letter-spacing:.03em}
+
+/* ============ FOOTER ============ */
+footer{position:relative;z-index:2;border-top:1px solid var(--line);margin-top:30px}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding:42px 0}
+.foot .brand{font-size:30px}
+.foot small{color:var(--muted);font-size:12.5px;letter-spacing:.03em}
+.foot-links{display:flex;gap:22px;font-size:12.5px;letter-spacing:.05em;color:var(--muted)}
+.foot-links a:hover{color:var(--gold-soft)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+/* responsive */
+@media(max-width:880px){
+  .nav-links{display:none}
+  .ethos,.craft,.visit{grid-template-columns:1fr;gap:40px}
+  .rev-grid{grid-template-columns:1fr 1fr}
+  .edit-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .wrap{padding:0 20px}
+  .hero-inner{padding:0 20px 11vh}
+  .rev-grid{grid-template-columns:1fr}
+  .edit-grid{grid-template-columns:1fr;grid-auto-rows:1fr}
+  .edit-grid img:nth-child(3){display:none}
+  .ethos-stats{gap:10px}
+  .visit-card,.visit-aside .glass{padding:30px}
+  .nav-cta{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="aura"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-pill" id="pill">
+    <a href="#top" class="brand">Kaha<b>.</b></a>
+    <div class="nav-links">
+      <a href="#ethos">Atelier</a>
+      <a href="#lookbook">Lookbook</a>
+      <a href="#craft">Craft</a>
+      <a href="#visit">Visit</a>
+    </div>
+    <a href="#visit" class="nav-cta">Book a fitting</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-bg"><img src="assets/look-rust.jpg" alt="Model in a rust pin-tuck anarkali with hand-woven border, from the Kaha atelier"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">Slow-fashion atelier · Chalappuram, Calicut</span>
+    <h1>Cloth, kept<br><em>unhurried.</em></h1>
+    <p class="hero-sub">Hand-embroidered ethnic wear and bridal couture, made one piece at a time — aari craft, gold bootis and quiet, deliberate tailoring.</p>
+    <div class="hero-meta">
+      <span class="chip"><i></i> Custom &amp; bridal stitching</span>
+      <span class="chip"><i></i> Pure cotton · georgette · festive silk</span>
+      <span class="chip"><i></i> Calicut &amp; Mangaluru</span>
+    </div>
+  </div>
+  <div class="scrollcue">Scroll<span></span></div>
+</header>
+
+<!-- ETHOS -->
+<section class="pad" id="ethos">
+  <div class="wrap ethos">
+    <div class="ethos-copy reveal">
+      <span class="label">The atelier</span>
+      <h2>A small house that believes a garment should be <em>worn a hundred times</em>, not once.</h2>
+      <p>Founded in the lanes of Chalappuram, Kaha Designs works the way couture once did — fabric chosen by hand, embroidery drawn before it is stitched, fittings taken in person. The palette leans into the things Kerala wears well: deep indigos, mocha browns, festive golds. Nothing loud, everything considered.</p>
+      <div class="ethos-stats">
+        <div class="stat glass"><div class="n">4.3<span style="font-size:1rem">★</span></div><div class="t">Local rating</div></div>
+        <div class="stat glass"><div class="n">2</div><div class="t">Studios · Calicut · Mangaluru</div></div>
+        <div class="stat glass"><div class="n">7yr</div><div class="t">Stitching by hand</div></div>
+      </div>
+    </div>
+    <figure class="ethos-img reveal">
+      <img src="assets/look-indigo.jpg" alt="Deep indigo set with mirror and silver hand-work">
+      <figcaption class="glass">Indigo set · mirror &amp; silver hand-work</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- LOOKBOOK -->
+<section class="pad" id="lookbook">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">Lookbook</span>
+      <h2>The current <em>edit</em></h2>
+      <p>Ready-to-wear and made-to-order pieces from the studio floor. Tap any look to enquire about fabric, fit or a custom colourway.</p>
+    </div>
+    <div class="gallery">
+      <div class="tile reveal"><img src="assets/look-magenta.jpg" alt="Magenta and navy floral anarkali with dupatta"><div class="tile-veil"><div><span class="nm">Magenta float</span><span class="tg">Floral anarkali · dupatta</span></div></div></div>
+      <div class="tile reveal"><img src="assets/look-yellow.jpg" alt="Yellow tissue set with heavy mirror and zardozi work"><div class="tile-veil"><div><span class="nm">Sun zardozi</span><span class="tg">Festive · hand mirror-work</span></div></div></div>
+      <div class="tile reveal"><img src="assets/look-mocha.jpg" alt="Mocha brown set with gold bootis"><div class="tile-veil"><div><span class="nm">Mocha</span><span class="tg">Gold booti · button placket</span></div></div></div>
+      <div class="tile reveal"><img src="assets/look-green.jpg" alt="Green checked kurta with floral sleeve embroidery"><div class="tile-veil"><div><span class="nm">Orchard check</span><span class="tg">Cotton · floral sleeve</span></div></div></div>
+      <div class="tile reveal"><img src="assets/look-powderblue.jpg" alt="Powder blue anarkali with gold motif"><div class="tile-veil"><div><span class="nm">Powder blue</span><span class="tg">Gota motif · A-line</span></div></div></div>
+      <div class="tile reveal"><img src="assets/look-watercolor.jpg" alt="Ivory anarkali with watercolour floral print"><div class="tile-veil"><div><span class="nm">Watercolour rose</span><span class="tg">Printed · pin-tuck yoke</span></div></div></div>
+      <div class="tile reveal"><img src="assets/look-teal.jpg" alt="Teal and grey panelled anarkali"><div class="tile-veil"><div><span class="nm">Tide</span><span class="tg">Panelled · chiffon dupatta</span></div></div></div>
+      <div class="tile reveal"><img src="assets/look-pintuck.jpg" alt="Ivory pin-tuck dress with pink hand-painted floral"><div class="tile-veil"><div><span class="nm">Ivory pin-tuck</span><span class="tg">Hand-painted floral</span></div></div></div>
+      <div class="tile reveal"><img src="assets/look-sage.jpg" alt="Sage green kurta with turquoise thread embroidery"><div class="tile-veil"><div><span class="nm">Sage</span><span class="tg">Turquoise threadwork</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CRAFT -->
+<section class="pad" id="craft">
+  <div class="wrap craft">
+    <figure class="craft-img reveal">
+      <img src="assets/look-pink.jpg" alt="Close detail of a pink anarkali with pin-tuck yoke and floral print">
+    </figure>
+    <div class="reveal">
+      <span class="label">The hand</span>
+      <div class="sec-head" style="margin-bottom:24px">
+        <h2>What we still do <em>by hand</em></h2>
+      </div>
+      <div class="craft-list">
+        <div class="craft-row"><span class="ix">i</span><div><h4>Aari &amp; thread embroidery</h4><p>Drawn onto the fabric, then worked needle-by-needle — the detailing that gathers compliments without ever shouting.</p></div></div>
+        <div class="craft-row"><span class="ix">ii</span><div><h4>Gold bootis &amp; scalloped edges</h4><p>Delicate metallic motifs and finished borders, the signatures that mark a Kaha piece across a room.</p></div></div>
+        <div class="craft-row"><span class="ix">iii</span><div><h4>Custom fit &amp; matching codes</h4><p>Bridal attire, party wear and family dress-codes, measured and stitched to the body rather than to a size chart.</p></div></div>
+        <div class="craft-row"><span class="ix">iv</span><div><h4>Considered fabric</h4><p>Pure cottons, georgette and seasonal festive silks — chosen wholesale and retail for how they fall and last.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALANKAR EDIT -->
+<section class="pad" style="padding-top:0">
+  <div class="wrap reveal">
+    <div class="edit glass">
+      <div class="edit-grid">
+        <img src="assets/look-pink.jpg" alt="Pink edit look">
+        <img src="assets/look-teal.jpg" alt="Teal edit look">
+        <img src="assets/look-magenta.jpg" alt="Magenta edit look">
+      </div>
+      <div class="edit-cap">
+        <span class="label">Alankar × Kaha</span>
+        <h3>The <em>Kannur</em> Edit ’26</h3>
+        <p>A capsule of weave-led festive pieces, shot across the old streets of Kannur — limited runs, made to order.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+          <a href="#visit" class="btn">Enquire about the edit</a>
+          <a href="https://www.instagram.com/kaha_designs/?hl=en" target="_blank" rel="noopener" class="btn ghost">See on Instagram ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label">In their words</span>
+      <h2>Stitched right, <em>worn often</em></h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rev glass sheen reveal"><div class="stars">★★★★★</div><p>“The team puts their heart and soul into every piece. The stitching is clear proof of it — I’ll be sending my friends and family here.”</p><div class="who"><span class="av">T</span><div><b>Thehseen Misba</b><span>Custom outfit</span></div></div></div>
+      <div class="rev glass sheen reveal"><div class="stars">★★★★★</div><p>“A perfect blend of creativity, quality and elegance. The attention to detail and unique designs truly stand out — every piece reflects exceptional craftsmanship.”</p><div class="who"><span class="av">S</span><div><b>Shabana E</b><span>Google review</span></div></div></div>
+      <div class="rev glass sheen reveal"><div class="stars">★★★★★</div><p>“Designed a salwar set for Eid and I’m so happy. More beautiful than I expected, the fitting was perfect, and I received so many compliments.”</p><div class="who"><span class="av">A</span><div><b>Ashna Fathima</b><span>Festive set</span></div></div></div>
+      <div class="rev glass sheen reveal"><div class="stars">★★★★★</div><p>“My go-to place for unique patterns. I keep coming back — the pieces always make me feel great and the personalised service sets them apart.”</p><div class="who"><span class="av">S</span><div><b>Saliha Hareef</b><span>Returning client</span></div></div></div>
+      <div class="rev glass sheen reveal"><div class="stars">★★★★★</div><p>“Nice collections and perfect stitching. All my special occasions are with Kaha. Ayesha is so friendly, which makes the selection easier.”</p><div class="who"><span class="av">R</span><div><b>Dr Roshni Shafeeq</b><span>Occasion wear</span></div></div></div>
+      <div class="rev glass sheen reveal"><div class="stars">★★★★★</div><p>“Classy collections and perfect stitching. It’s totally worth the money.”</p><div class="who"><span class="av">E</span><div><b>Elina Ilthumish</b><span>Local Guide</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="pad" id="visit" style="padding-top:0">
+  <div class="wrap visit">
+    <div class="visit-card glass sheen reveal">
+      <span class="label">Visit the studio</span>
+      <h2>Come in for a <em>fitting</em></h2>
+      <div class="info">
+        <div class="info-row"><div class="k">Address</div><div class="v">Al Rahaba Arcade, opp. Axis Bank,<br>Pushpa Junction, Chalappuram,<br>Kozhikode, Kerala 673002</div></div>
+        <div class="info-row"><div class="k">Hours</div><div class="v">Open daily · 10:00 AM – 8:00 PM<small>Monday to Sunday</small></div></div>
+        <div class="info-row"><div class="k">Call</div><div class="v"><a href="tel:+917736560742">+91 77365 60742</a><small>Walk-in or appointment</small></div></div>
+        <div class="info-row"><div class="k">Also at</div><div class="v">Mangaluru<small>Second studio</small></div></div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:34px">
+        <a href="https://www.google.com/maps/search/?api=1&query=Kaha+Designs+Chalappuram+Kozhikode" target="_blank" rel="noopener" class="btn">Get directions ↗</a>
+        <a href="tel:+917736560742" class="btn ghost">Call the studio</a>
+      </div>
+    </div>
+    <aside class="visit-aside">
+      <div class="glass aside-img reveal" style="aspect-ratio:4/3"><img src="assets/look-lime.jpg" alt="Lime chartreuse set with gold tissue border and dupatta"></div>
+      <div class="glass sheen reveal">
+        <div>
+          <span class="label">Follow the work</span>
+          <p style="color:var(--muted);font-size:.98rem;margin-top:6px">New looks, behind-the-scenes of the embroidery table, and edit drops first.</p>
+        </div>
+        <a href="https://www.instagram.com/kaha_designs/?hl=en" target="_blank" rel="noopener" class="ig">◎ @kaha_designs ↗</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot">
+    <a href="#top" class="brand">Kaha<b>.</b></a>
+    <div class="foot-links">
+      <a href="#ethos">Atelier</a>
+      <a href="#lookbook">Lookbook</a>
+      <a href="#craft">Craft</a>
+      <a href="#visit">Visit</a>
+      <a href="https://www.instagram.com/kaha_designs/?hl=en" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <small>© Kaha Designs · Chalappuram, Calicut · Slow fashion since 2018</small>
+  </div>
+</footer>
+
+<script>
+// reveal on scroll
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+document.querySelectorAll('.reveal').forEach((el,i)=>{io.observe(el)});
+
+// liquid sheen follows pointer on glass + nav pill
+function track(el){
+  el.addEventListener('pointermove',e=>{
+    const r=el.getBoundingClientRect();
+    el.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+    el.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+  });
+}
+document.querySelectorAll('.glass.sheen').forEach(track);
+track(document.getElementById('pill'));
+
+// nav pill shrink on scroll
+const pill=document.getElementById('pill');
+addEventListener('scroll',()=>{
+  if(scrollY>40){pill.style.transform='scale(.96)';}
+  else{pill.style.transform='scale(1)';}
+},{passive:true});
+</script>
+</body>
+</html>
